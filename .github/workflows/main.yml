@@ -1,8 +1,8 @@
 on:
   workflow_dispatch:
   push:
-
-jobs:
+env:
+ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
