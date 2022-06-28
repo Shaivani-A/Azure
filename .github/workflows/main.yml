@@ -1,8 +1,7 @@
 on:
   workflow_dispatch:
   push:
-env:
- jobs:
+jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
@@ -13,4 +12,4 @@ env:
         run: curl https://api.ipify.org
       -  name: Print Public IP
          run: |
-          echo ${{env.Check_IP}}
+          echo ${{steps.id.ip}}
