@@ -30,4 +30,4 @@ jobs:
   
     - name: 'Run Azure CLI commands'
       run: |
-        az network nsg rule create --resource-group Web_app --nsg-name Myvm-nsg --name MyNsgRule --priority 100  --source-port-ranges 22 --destination-address-prefixes 22  --access Allow --protocol Tcp 
+        az network nsg rule create --resource-group Web_app --nsg-name Myvm-nsg --name MyNsgRule --priority 100  --source-port-ranges 22 --destination-address-prefixes 22  --destination-port-ranges 22 --access Allow --protocol Tcp 
