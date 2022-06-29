@@ -30,4 +30,4 @@ jobs:
   
     - name: 'Run Azure CLI commands'
       run: |
-        az network nsg rule create -g Web_app --nsg-name Myvm-nsg -n MyNsgRule --priority 100 --direction Inbound --access Allow --description-port-ranges 22
+        az network nsg rule create --resource-group Web_app --nsg-name Myvm-nsg --name MyNsgRule --priority 100  --source-port-ranges 22 --destination-address-prefixes '*' --destination-port-ranges 22 --access Allow --protocol Tcp --description "Deny from specific IP address ranges on 80 and 8080."
