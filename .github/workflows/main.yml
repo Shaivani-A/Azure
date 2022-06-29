@@ -30,4 +30,5 @@ jobs:
   
     - name: 'Run Azure CLI commands'
       run: |
-         ssh -i /home/azureuser/Myvm_key.pem azureuser@51.137.189.160 
+        az vm list-ip-addresses --resource-group Web_app
+        az vm list 
