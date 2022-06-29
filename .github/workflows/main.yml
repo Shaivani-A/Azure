@@ -30,4 +30,5 @@ jobs:
   
     - name: 'Run Azure CLI commands'
       run: |
-          az group list
+          az vm show 
+          az rg show
