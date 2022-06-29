@@ -4,11 +4,14 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    outputs: 
+     output1: ${{steps.IP.outputs.ip}}
     steps:
       - name: 🛒 Checkout
         uses: actions/checkout@v2
       - name: 🔎 Check_IP
-        id: ip
+        id: IP
         run: curl https://api.ipify.org
+      
       - name: Print_IP
-        run: echo ${{steps.id.ip}}
+        run: echo ${{jobs.outputs.output1}}
