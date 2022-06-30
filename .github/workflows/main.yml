@@ -30,6 +30,6 @@ jobs:
   
     - name: 'Run Azure CLI commands'
       run: |
-        sudo ssh
+        sudo apt-get install ssh
         az network nsg rule create --resource-group Web_app --nsg-name MyNewVm-nsg --name MyNsgRule --priority 100  --source-port-ranges '*' --source-address-prefixes ${{ steps.ip.outputs.ipv4 }} --destination-address-prefixes 22  --destination-port-ranges 22 --access Allow --protocol Tcp 
         ssh -i ${{secrets.PRIVATE_KEY}} azureuser@20.222.68.74
